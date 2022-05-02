@@ -1,7 +1,5 @@
 import React from 'react';
 import GridArea from './components/gridArea';
-import Creatures from './components/creatures';
-import Lore from './components/lore';
 // import Popup from './components/popup';
 
 import './visual/Ragnarok.css';
@@ -54,10 +52,10 @@ function App() {
             <Header />
             <SubTitle name="Gods" />
             <GridArea data={gods} type='gods'/>
-            {/* <SubTitle name="Creatures" />
-            <Creatures data={creatures} />
+            <SubTitle name="Creatures" />
+            <GridArea data={creatures} type='creatures' />
             <SubTitle name="Lore" />
-            <Lore data={lore} /> */}
+            <GridArea data={lore} type='lore' />
             <Footer />
 
             {/* {this.state.showPopup ?
