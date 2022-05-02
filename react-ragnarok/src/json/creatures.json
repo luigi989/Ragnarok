@@ -1,0 +1,39 @@
+{
+    "creatures": [
+        {
+            "name": "Ash Zombie",
+            "id": 1,
+            "desc": "Very dangerous if meet if multiple"
+        },
+        {
+            "name": "Bat",
+            "id": 2,
+            "desc": "Sleeps in caves at day, hunts at night"
+        },
+        {
+            "name": "Bear",
+            "id": 3,
+            "desc": "Wanders alone in the forest. Beware of them when they have kids"
+        },
+        {
+            "name": "Icebear",
+            "id": 4,
+            "desc": "Even more dangerous than bears"
+        },
+        {
+            "name": "Skeleton bear",
+            "id": 5,
+            "desc": "Rare variant of bear. Flee immediatly if you see one"
+        },
+        {
+            "name": "Vampire",
+            "id": 6,
+            "desc": "Often seen sucking dead boides"
+        },
+        {
+            "name": "Wolf",
+            "id": 7,
+            "desc": "Hunts in packs. Can be domesitated"
+        }
+    ]
+}

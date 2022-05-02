@@ -1,0 +1,24 @@
+{
+    "lore": [
+        {
+            "name": "Bow",
+            "id": 1,
+            "desc": "One bow to rule them all"
+        },
+        {
+            "name": "Club",
+            "id": 2,
+            "desc": "Weapon with surprisingly dangerous power"
+        },
+        {
+            "name": "Hammer",
+            "id": 3,
+            "desc": "Heavy, but effective"
+        },
+        {
+            "name": "Sword",
+            "id": 4,
+            "desc": "Swift and reliable"
+        }
+    ]
+}

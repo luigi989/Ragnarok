@@ -1,0 +1,29 @@
+{
+    "gods": [
+        {
+            "name": "Oden",
+            "id": 1,
+            "desc": "The god that rules all gods"
+        },
+        {
+            "name": "Freja",
+            "id": 2,
+            "desc": "The god of lust"
+        },
+        {
+            "name": "Tor",
+            "id": 3,
+            "desc": "Thunder gud"
+        },
+        {
+            "name": "Hades",
+            "id": 4,
+            "desc": "The ruler of Hell"
+        },
+        {
+            "name": "Frej",
+            "id": 5,
+            "desc": "Write something here"
+        }
+    ]
+}
