@@ -1,5 +1,5 @@
 import React from 'react';
-import Gods from './components/gods';
+import GridArea from './components/gridArea';
 import Creatures from './components/creatures';
 import Lore from './components/lore';
 // import Popup from './components/popup';
@@ -53,11 +53,11 @@ function App() {
             <React.StrictMode>
             <Header />
             <SubTitle name="Gods" />
-            <Gods data={gods}/>
-            <SubTitle name="Creatures" />
+            <GridArea data={gods} type='gods'/>
+            {/* <SubTitle name="Creatures" />
             <Creatures data={creatures} />
             <SubTitle name="Lore" />
-            <Lore data={lore} />
+            <Lore data={lore} /> */}
             <Footer />
 
             {/* {this.state.showPopup ?
