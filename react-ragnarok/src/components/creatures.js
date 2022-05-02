@@ -1,44 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Creature from './creature';
 
-class Creatures extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { creatures: [] };
-        this.sendData = this.sendData.bind(this);
-        this.fetchCreatures = this.fetchCreatures.bind(this);
-    }
+const Gods = ({ data }) => {
+  const [creatures, setCreatures] = useState([]);
 
-    componentDidMount() {
-        this.fetchCreatures();
-    }
+  useEffect(() => {
+    setCreatures(data.creatures);
+    console.log(data.creatures);
+  }, [])
+  
 
-    fetchCreatures() {
-        fetch('http://localhost:3001/creatures', {
-          method: 'GET',
-        })
-        .then(response => {
-          return response.json();
-        })
-        .then(data => {
-          this.setState({creatures: data});
-        })
-      }
-    
-    sendData(creature) {
-        this.props.onGodChange(creature);
-    }
-
-    render() {
-        return (
-            <div>
-                <div className="grid-layout">
-                    {this.state.creatures.map((creature, index) => 
-                    <Creature info={creature} sendData={this.sendData} />
-                    )}
-                </div>   
-            </div>
-        );
-    }
+  return (
+      <div>
+        <div className="grid-layout">
+          {creatures.map((creature, index) => 
+              <Creature key={index} name={creature.name} desc={creature.desc} />
+          )}
+        </div>   
+      </div>
+    );  
 }
-export default Creatures;
+export default Gods;

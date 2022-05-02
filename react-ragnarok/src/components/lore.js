@@ -1,43 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import LoreEntry from './loreEntry';
 
-class Lore extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { lore_entries: [] };
-        this.sendData = this.sendData.bind(this);
-        this.fetchLore = this.fetchLore.bind(this);      }
-    
-        componentDidMount() {
-          this.fetchLore();
-        }
-      
-        fetchLore() {
-          fetch('http://localhost:3001/lore', {
-            method: 'GET',
-          })
-          .then(response => {
-            return response.json();
-          })
-          .then(data => {
-            this.setState({lore_entries: data});
-          })
-        }
-      
-        sendData(lore) {
-          this.props.onGodChange(lore);
-        }
+const Lore = ({ data }) => {
+  const [lore, setLore] = useState([]);
 
-      render() {
-        return (
-          <div>
-            <div className="grid-layout">
-              {this.state.lore_entries.map((lore, index) => 
-                <LoreEntry info={lore} sendData={this.sendData} />
-              )}
-            </div>   
-          </div>
-        );
-    }
+  useEffect(() => {
+    setLore(data.lore);
+    console.log(data.lore);
+  }, [])
+  
+
+  return (
+      <div>
+        <div className="grid-layout">
+          {lore.map((lore, index) => 
+              <LoreEntry key={index} name={lore.name} desc={lore.desc} />
+          )}
+        </div>   
+      </div>
+    );  
 }
 export default Lore;

@@ -2,93 +2,71 @@ import React from 'react';
 import Gods from './components/gods';
 import Creatures from './components/creatures';
 import Lore from './components/lore';
-import Popup from './components/popup';
+// import Popup from './components/popup';
 
 import './visual/Ragnarok.css';
 import './visual/hover_effects.css';
 
-import logo from './images/pattern.png';
-import arrowRight from './images/arrowRight.png';
+import gods from './json/gods.json';
+import creatures from './json/creatures.json';
+import lore from './json/lore.json';
 
-class SubTitle extends React.Component {
-    render() {
+// import logo from '/images/pattern.png';
+
+const SubTitle = ({ name }) => {
       return (
-        <div className="category_header">
-          <h1><a href="gods.html">{this.props.name}</a></h1>
-          <img id="arrowRight" src={arrowRight} alt="arrowRight" />
+        <div className="text-2xl ">
+          <h1><a>{name}</a></h1>
+          {/* <img src={arrowRight} alt="arrowRight" /> */}
         </div>
       );
-    }
   }
   
-  class Header extends React.Component {
-    render() {
+  const Header = () => {
       return (
-        <header>   
-          <div id="header_search">
-            <a href="Ragnarok.html">
-              <img id="logo" src={logo} alt="Logo" />
-            </a>
-            <form id="searchbar_form">
-              <input type="text" placeholder="Search..." name="search"></input>
-              <button type="submit">Submit</button> 
-            </form>
-          </div>
+        <header className='flex w-full'>  
+          <a href="Ragnarok.html">
+            <img src={'/images/pattern.png'} alt="Logo" />
+          </a>
+          {/* <form id="searchbar_form" className=''>
+            <input type="text" placeholder="Search..." name="search"></input>
+            <button type="submit">Submit</button> 
+          </form> */}
         </header>
       );
-    }
   }
   
-  class Footer extends React.Component {
-    render() {
+  const Footer = () => {
       return (
-        <footer>
-          <ul>
+        <footer className='border-solid border-t-2 border-[#946c28] bg-[#412d0b] mt-6'>
+          <ul className='flex flex-col p-2 text-amber-200'>
             <li>Contact Us</li>
             <li>Site Info</li>
             <li>References</li>
           </ul>
-          <div>ey</div>
-          <div>eey</div>
-          <div>eeey</div>
         </footer>
       );
-    }
   }
 
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {id: '', name: '', description: '', showPopup: false};
-        this.handleGodChange = this.handleGodChange.bind(this);
-    } 
-
-    handleGodChange(god) {
-        this.setState({name: god.name});
-        this.setState({id: god.id});
-        this.setState({description: god.description});
-        this.setState({showPopup: !this.state.showPopup});
-    }
-
-    render() {
-        return (
+function App() {
+  return (
             <React.StrictMode>
             <Header />
-            <SubTitle name={"Gods"} />
-            <Gods onGodChange={this.handleGodChange} />
-            <SubTitle name={"Creatures"} />
-            <Creatures onGodChange={this.handleGodChange} />
-            <SubTitle name={"Lore"} />
-            <Lore onGodChange={this.handleGodChange} />
+            <SubTitle name="Gods" />
+            <Gods data={gods}/>
+            <SubTitle name="Creatures" />
+            <Creatures data={creatures} />
+            <SubTitle name="Lore" />
+            <Lore data={lore} />
             <Footer />
 
-            {this.state.showPopup ?
+            {/* {this.state.showPopup ?
             <Popup name={this.state.name} description={this.state.description} 
                 closePopup={this.handleGodChange} /> 
-            : null }  
+            : null }   */}
 
             </React.StrictMode>
-        );
-    }
+
+  );
 }
 export default App;
