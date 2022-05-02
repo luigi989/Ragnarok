@@ -2,18 +2,13 @@ import React from 'react';
 import GridArea from './components/gridArea';
 // import Popup from './components/popup';
 
-import './visual/Ragnarok.css';
-import './visual/hover_effects.css';
-
 import gods from './json/gods.json';
 import creatures from './json/creatures.json';
 import lore from './json/lore.json';
 
-// import logo from '/images/pattern.png';
-
 const SubTitle = ({ name }) => {
       return (
-        <div className="text-2xl ">
+        <div className="text-2xl text-yellow-600 ml-3">
           <h1><a>{name}</a></h1>
           {/* <img src={arrowRight} alt="arrowRight" /> */}
         </div>
