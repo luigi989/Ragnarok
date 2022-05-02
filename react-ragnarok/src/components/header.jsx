@@ -1,6 +1,6 @@
 const Header = () => {
     return (
-      <header className='flex w-full'>
+      <header className='flex mx-auto w-11/12'>
         <a href="../Ragnarok.html">
           <img src={'/images/pattern.png'} alt="Logo" />
         </a>
