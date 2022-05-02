@@ -6,12 +6,11 @@ const GridArea = ({ data, type }) => {
 
   useEffect(() => {
     setContent(data.content);
-    console.log(data.content);
   }, [])
 
   return (
       <div>
-        <div className="grid-layout">
+        <div className="grid grid-cols-5 mb-4">
           {content.map((cell, index) => 
               <Cell key={index} type={type} name={cell.name} desc={cell.desc} />
           )}
