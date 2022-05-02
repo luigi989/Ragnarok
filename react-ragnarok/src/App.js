@@ -12,9 +12,11 @@ function App() {
   return (
     <React.StrictMode>
       <Header />
-      <GridArea data={gods} type='gods' />
-      <GridArea data={creatures} type='creatures' />
-      <GridArea data={lore} type='lore' />
+      <div className='w-11/12 mx-auto'>
+        <GridArea data={gods} type='gods' />
+        <GridArea data={creatures} type='creatures' />
+        <GridArea data={lore} type='lore' />
+      </div>
       <Footer />
 
       {/* {this.state.showPopup ?
