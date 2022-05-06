@@ -1,4 +1,4 @@
-## :microscope: Periodic
+## :microscope: Ragnarok
 
 ![Header Image](src/assets/portfolio_ragnarok.webp)
 
