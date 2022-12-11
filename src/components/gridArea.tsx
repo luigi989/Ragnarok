@@ -1,12 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Test } from '../interfaces';
 import Cell from './cell';
 
-const GridArea = ({ data, type }) => {
-  const [content, setContent] = useState([]);
+export interface GridAreaProps {
+  data: Array<Test>;
+  type: string;
+}
+
+export default function GridArea({ data, type } : GridAreaProps) {
+  const [content, setContent] = useState([] as Test[]);
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    setContent(data.content);
+    setContent(data);
   }, [data])
 
   return (
@@ -32,4 +38,3 @@ const GridArea = ({ data, type }) => {
     </div>
   );
 }
-export default GridArea;

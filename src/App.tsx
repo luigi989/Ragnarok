@@ -13,9 +13,9 @@ function App() {
     <React.StrictMode>
       <Header />
       <div className='w-11/12 mx-auto'>
-        <GridArea data={gods} type='gods' />
-        <GridArea data={creatures} type='creatures' />
-        <GridArea data={lore} type='lore' />
+        <GridArea data={gods.content} type='gods' />
+        <GridArea data={creatures.content} type='creatures' />
+        <GridArea data={lore.content} type='lore' />
       </div>
       <Footer />
 

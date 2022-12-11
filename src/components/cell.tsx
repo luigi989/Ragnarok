@@ -1,6 +1,10 @@
-import React from 'react';
+export interface CellProps {
+  type: string;
+  name: string;
+  desc: string;
+}
 
-const Cell = ({ type, name, desc}) => {  
+const Cell = ({ type, name, desc} : CellProps) => {  
   return (
     <div className="group relative cursor-pointer transition ease-linear duration-300
                     overflow-hidden w-fit text-white">
