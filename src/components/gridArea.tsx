@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Test } from '../interfaces';
 import Cell from './cell';
 import Collapse from './collapse';
+import Heading from './heading';
 
 export interface GridAreaProps {
   data: Array<Test>;
@@ -14,10 +15,7 @@ export default function GridArea({ data, type } : GridAreaProps) {
 
   return (
     <div>
-      <div className='flex items-center gap-3'>
-        <h1 className='inline-block text-2xl text-yellow-600 hover:cursor-pointer w-fit first-letter:uppercase'>{type}</h1>
-        <Collapse hidden={hidden} onClick={() => setHidden(!hidden)} />
-      </div>
+      <Heading text={type} hidden={hidden} onClick={() => setHidden(!hidden)} />
       <div className={hidden ? "hidden" : "grid grid-cols-8 mb-4"}>
         {content.map((cell, index) =>
           <Cell key={index} type={type} name={cell.name} desc={cell.desc} />

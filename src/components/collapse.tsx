@@ -7,10 +7,8 @@ export interface CollapseProps {
 
 export default function Collapse({ hidden, onClick }: CollapseProps) {
     return (
-        <div className='text-black' onClick={onClick}>
-            <div className='p-1 rounded-full bg-blue-200'>
-                {hidden ? <BsChevronDown /> : <BsChevronUp /> }
-            </div>
+        <div className='p-2 rounded-r-3xl cursor-pointer hover:bg-textPrimary hover:text-bgAccent' onClick={onClick}>
+            {hidden ? <BsChevronDown /> : <BsChevronUp />}
         </div>
     );
 } 
