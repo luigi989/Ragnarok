@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Test } from '../interfaces';
 import Cell from './cell';
-import Collapse from './collapse';
 import Heading from './heading';
 
 export interface GridAreaProps {
@@ -18,7 +18,9 @@ export default function GridArea({ data, type } : GridAreaProps) {
       <Heading text={type} hidden={hidden} onClick={() => setHidden(!hidden)} />
       <div className={hidden ? "hidden" : "grid grid-cols-8 mb-4"}>
         {content.map((cell, index) =>
+        <Link to={cell.name} state={{data: cell, type: type}} key={index}>
           <Cell key={index} type={type} name={cell.name} desc={cell.desc} />
+        </Link>
         )}
       </div>
     </div>
